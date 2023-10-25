@@ -4,6 +4,7 @@ module.exports = {
   "./screens/**/*.{js,jsx,ts,tsx}", 
   "./components/**/*.{js,jsx,ts,tsx}",
   "./pages/**/*.{js,ts,jsx,tsx}",
+  "./screens/RestaurantScreen.js"
 ],
   
   theme: {

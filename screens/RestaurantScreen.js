@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { setRestaurant } from "../features/restaurantSlice";
 
 
-const Restaurant = () => {
+const RestaurantScreen = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const {
@@ -128,4 +128,4 @@ const Restaurant = () => {
   );
 };
 
-export default Restaurant;
+export default RestaurantScreen;

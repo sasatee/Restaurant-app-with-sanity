@@ -41,7 +41,7 @@ export const selectBasketItemsWithId = (state, id) =>
 
 
 export const selectTotalItems = (state) => state.basket.items.reduce((total,item)=>
-  total =+ item.price,0);
+  total += item.price,0);
 
 
   

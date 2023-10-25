@@ -4,33 +4,29 @@ import Currency from "react-currency-formatter";
 import { urlFor } from "../sanity";
 import { Entypo } from "@expo/vector-icons";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addToBasket,
-  removeFromBasket,
-  selectBasketItems,
-  selectBasketItemsWithId,
-} from "../features/basketSlice";
+import {addToBasket, removeFromBasket, selectBasketItems, selectBasketItemsWithId} from "../features/basketSlice"
 
 const DishRow = ({ id, name, description, price, image }) => {
   const [isPressed, setIsPressed] = useState(false);
   const dispatch = useDispatch();
-  const items = useSelector((state) => selectBasketItemsWithId(state, id));
-  const addItemToBasket = () => {
-    //going to dispatch an action
-    dispatch(addToBasket({ id, name, description, price, image }));
+  const items = useSelector(state => selectBasketItemsWithId(state,id));
+  const addItemToBasket = () =>{ 
+    //going to dispatch an action 
+  dispatch(addToBasket({id,name,description,price,image}));
+    
+
   };
-  const removeItemFromBasket = () => {
-    if (!items.length > 0) return;
-    dispatch(removeFromBasket({ id }));
-  };
+  const removeItemFromBasket = () =>{
+    if(!items.length>0) return;
+    dispatch(removeFromBasket({id}))
+  }
 
   console.log(items);
   return (
     <>
       <TouchableOpacity
         onPress={() => setIsPressed(!isPressed)}
-        className={`bg-white p-4 border-gray-200 ${isPressed && "border-b-0"}`}
-      >
+        className={`bg-white p-4 border-gray-200 ${isPressed && "border-b-0"}`}>
         <View className="flex-row">
           <View className="flex-1 pr-2">
             <Text className="text-lg mb-1">{name}</Text>
@@ -55,23 +51,12 @@ const DishRow = ({ id, name, description, price, image }) => {
       {isPressed && (
         <View className="bg-white px-4">
           <View className="flex-row items-center space-x-2 pb-3">
-            <TouchableOpacity
-              onPress={removeItemFromBasket}
-              disabled={!items.length}
-            >
-              <Entypo
-                name="circle-with-minus"
-                size={40}
-                color={items.length > 0 ? "#00CCBB" : "gray"}
-              />
+            <TouchableOpacity onPress={removeItemFromBasket} disabled={!items.length}>
+              <Entypo name="circle-with-minus" size={40} color={items.length>0? "#00CCBB":"gray"}/>
             </TouchableOpacity>
             <Text>{items.length}</Text>
-            <TouchableOpacity onPress={addItemToBasket}>
-              <Entypo
-                name="circle-with-plus"
-                size={40}
-                color={items.length > 0 ? "#00CCBB" : "gray"}
-              />
+            <TouchableOpacity onPress={addItemToBasket} >
+              <Entypo name="circle-with-plus"  size={40} color={items.length>0? "#00CCBB":"gray"} />
             </TouchableOpacity>
           </View>
         </View>

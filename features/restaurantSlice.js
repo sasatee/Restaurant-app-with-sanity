@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  restaurant:{
-    id:null,
-    imgUrl:null,
-    title:null,
-    rating:null,
-    genre:null,
-    address:null,
-    short_description:null,
-    dishes:null,
-  }
+  restaurant: {
+    id: null,
+    imgUrl: null,
+    title: null,
+    rating: null,
+    genre: null,
+    address: null,
+    short_description: null,
+    dishes: null,
+  },
 };
 
 export const restaurantSlice = createSlice({
@@ -18,9 +18,8 @@ export const restaurantSlice = createSlice({
   initialState,
   reducers: {
     setRestaurant: (state, action) => {
-     state.restaurant = action.payload
+      state.restaurant = action.payload;
     },
- 
   },
 });
 
@@ -28,7 +27,5 @@ export const restaurantSlice = createSlice({
 export const { setRestaurant } = restaurantSlice.actions;
 
 export const selectRestaurant = (state) => state.restaurant.restaurant; // access the data in our reducer
-
-
 
 export default restaurantSlice.reducer;
