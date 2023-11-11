@@ -21,7 +21,7 @@ const DishRow = ({ id, name, description, price, image }) => {
     dispatch(removeFromBasket({id}))
   }
 
-  console.log(items);
+  //console.log(items);
   return (
     <>
       <TouchableOpacity
