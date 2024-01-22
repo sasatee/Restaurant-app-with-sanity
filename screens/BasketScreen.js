@@ -84,7 +84,7 @@ const BasketScreen = () => {
                 />
                 <Text className="flex-1">{items[0]?.name}</Text>
                 <Text className="text-gray-600">
-                  <Currency quantity={items[0]?.price} currency="MUR" />
+                  <Currency quantity={items[0]?.price} currency="MUR" /> 
                 </Text>
                 <TouchableOpacity>
                   <Text
