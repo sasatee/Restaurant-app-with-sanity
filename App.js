@@ -26,14 +26,16 @@ export default function App() {
               headerShown: false,
             }}
           />
-                   <Stack.Screen name="PreparingOrderScreen" component={PreparingOrderScreen} 
-                   
-                   options={{presentation:"fullScreenModal",headerShown:false}}
-                   />
-                      <Stack.Screen name="Delivery" component={DeliveryScreen} 
-                      
-                      options={{presentation:"fullScreenModal",headerShown:false}}
-                      />
+          <Stack.Screen
+            name="PreparingOrderScreen"
+            component={PreparingOrderScreen}
+            options={{ presentation: "fullScreenModal", headerShown: false }}
+          />
+          <Stack.Screen
+            name="Delivery"
+            component={DeliveryScreen}
+            options={{ presentation: "fullScreenModal", headerShown: false }}
+          />
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>

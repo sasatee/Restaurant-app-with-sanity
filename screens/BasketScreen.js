@@ -25,11 +25,11 @@ const BasketScreen = () => {
   const items = useSelector(selectBasketItems);
   const basketTotal = useSelector(selectTotalItems);
   const dispatch = useDispatch();
-  
 
   const [groupedItemsInBasket, setGroupedItemsInBasket] = useState([]);
 
   useMemo(() => {
+    //if value of item does not change , useMemo wouldn't recompute the value
     const groupedItems = items.reduce((results, item) => {
       (results[item.id] = results[item.id] || []).push(item);
       return results;
@@ -84,7 +84,7 @@ const BasketScreen = () => {
                 />
                 <Text className="flex-1">{items[0]?.name}</Text>
                 <Text className="text-gray-600">
-                  <Currency quantity={items[0]?.price} currency="MUR" /> 
+                  <Currency quantity={items[0]?.price} currency="MUR" />
                 </Text>
                 <TouchableOpacity>
                   <Text
